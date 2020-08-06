@@ -1,0 +1,21 @@
+<div class="showShoppingList mt-5">
+  <div *ngIf="ShoppingList.length == 0; else elseBlock ">
+    <p>
+      No items.
+    </p>
+  </div>
+  <ng- #elseBlock>
+     <ul class="list-group mt-3" ngFor="let ShoppingList of ShoppingList; let i = index">
+<li class="list-group-item" style="display: flex; justify-content: space-between">
+  <div class="form-group form-check mt-3">
+    <input type="checkbox" class="form-check-input" id="checked">
+
+  </div>
+{{ShoppingList.items}}
+<i class="fa fa trash" aria-hidden=true {click}="delete{i}">
+
+</i>
+</li>
+     </ul>
+  </ng-template>
+</div>
